@@ -33,14 +33,16 @@ carousel();
 function carousel() {
     var images = document.getElementsByClassName("slides");
     for (counterHidden = 0; counterHidden < images.length; counterHidden++) {
-    images[counterHidden].style.display = "none";  
+    images[counterHidden].classList.remove('show');
+    images[counterHidden].classList.add('hide');
     }
     counterShown++;
     if (counterShown > images.length) {
         location.reload();
         counterShown = 1;
     }    
-    images[counterShown-1].style.display = "block";  
+    images[counterShown-1].classList.add('show');
+    images[counterShown-1].classList.remove('hide');
     setTimeout(carousel, <?php echo $ini['interval']; ?>); 
 }
 </script>
