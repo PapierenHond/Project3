@@ -1,7 +1,8 @@
 <?php 
 $ini = parse_ini_file('../config/config.ini');
 
-$all_files = glob("../../Img/"."*.*");
+$all_files = glob("../../Img/*.{jpg,jpeg,jfif,png,webp}", GLOB_BRACE);
+
 
 $imgArray = [];
 
